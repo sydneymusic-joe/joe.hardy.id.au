@@ -1,0 +1,54 @@
+/* src/assets/css/tailwind.css*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1, h2, h3, h4, h5, h6, body {
+	@apply font-sans font-thin;
+}
+
+main h1 {
+	@apply text-4xl;
+}
+
+a {
+	@apply text-linkblue underline;
+}
+
+h2 > a { @apply text-black no-underline }
+
+.gigantor figure, .gigantor figcaption, .gigantor img {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+.gigantor img {
+	max-width : none;
+	z-index: 0
+}
+
+.gigantor figcaption {
+	@apply p-3 text-slate-600 text-xs
+}
+
+figcaption {
+	@apply pt-3 text-slate-600 text-xs
+}
+
+figcaption span:first-child:before { content : '⇡'; margin-right : 5px; color : #888; }
+figcaption span:not(:empty) { @apply pr-2}
+figcaption span:not(:first-child):not(:empty) {	
+	@apply pl-2;
+	border-left : black solid 1px
+}
+figcaption span:last-child { color : #aaa; }
+
+.post-content ul li, .hire-me ul li { margin-bottom : 6px;}
+.post-content ul li:before, .hire-me ul li:before {
+	float : left; content : '⇢';
+	margin-right : 10px;
+}

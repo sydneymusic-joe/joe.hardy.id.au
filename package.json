@@ -1,0 +1,27 @@
+{
+  "name": "joe.blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p dev:*",
+    "build": "run-s build:*",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --watch --postcss",
+    "build:11ty": "eleventy",
+    "build:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --postcss"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@contentful/rich-text-html-renderer": "^16.3.0",
+    "autoprefixer": "^10.4.16",
+    "contentful": "^10.6.16",
+    "dotenv": "^16.3.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1"
+  }
+}
