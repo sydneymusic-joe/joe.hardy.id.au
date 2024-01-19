@@ -54,7 +54,6 @@ figcaption span:last-child { color : #aaa; }
 }
 
 .contactbar {
-	@apply space-x-3;
 }
 
 .contactbar > div { 
@@ -62,7 +61,7 @@ figcaption span:last-child { color : #aaa; }
 }
 
 .contactbar > div > a {
-	@apply no-underline bg-blue-500 rounded-full px-5 py-2 text-white shadow-md;
+	@apply no-underline bg-blue-500 rounded-full px-5 py-2 text-white shadow-md text-xs;
 }
 
 .contactbar > div:nth-child(2) > a {
@@ -71,11 +70,8 @@ figcaption span:last-child { color : #aaa; }
 
 .contactbar > div:nth-child(2) > a:before {
 	content : url(/assets/images/weirdopit.svg);
-	height : 15px;
-	width : 15px;
-	display : inline-block;
 
-	@apply mr-2;
+	@apply inline-block w-[10px] h-[10px] mr-2;
 }
 
 .contactbar > div:nth-child(3) > a {
