@@ -52,3 +52,39 @@ figcaption span:last-child { color : #aaa; }
 	float : left; content : '⇢';
 	margin-right : 10px;
 }
+
+.contactbar {
+	@apply space-x-3;
+}
+
+.contactbar > div { 
+	@apply mt-3;
+}
+
+.contactbar > div > a {
+	@apply no-underline bg-blue-500 rounded-full px-5 py-2 text-white shadow-md;
+}
+
+.contactbar > div:nth-child(2) > a {
+	@apply bg-slate-500;
+}
+
+.contactbar > div:nth-child(2) > a:before {
+	content : url(/assets/images/weirdopit.svg);
+	height : 15px;
+	width : 15px;
+	display : inline-block;
+
+	@apply mr-2;
+}
+
+.contactbar > div:nth-child(3) > a {
+	@apply bg-white text-black border-black border border-slate-200;
+}
+
+.contactbar > div:nth-child(3) > a:before {
+	content : '⇠';
+	display : inline-block;
+	margin-left : -3px;
+	@apply mr-2;
+}
