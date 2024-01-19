@@ -34,7 +34,7 @@ pagination:
 	<div class="w-full max-w-4xl mx-auto px-5">
 {% for post in pagination.items %}
 <div class="my-10 {% if post.outrageousHeroImage %}gigantor {% endif %}">
-	<h2 class="text-4xl md:text-6xl tracking-tight font-bold md:w-[50%] w-[75%]"><a href="{{ post.slug | url }}/">{{ post.title }}</a></h2>
+	<h2 class="text-4xl md:text-6xl tracking-tight font-bold md:w-[50%] w-[75%]"><a href="/{{ post.slug | url }}/">{{ post.title }}</a></h2>
 	<div class="text-xs uppercase">{% blogDateFormatted post.postDate %}</div>
 
 	{% if post.outrageousHeroImage %}
