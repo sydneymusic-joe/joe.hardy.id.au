@@ -16,6 +16,9 @@ module.exports = {
       },
       backgroundPosition : {
         'bottom-4': 'center bottom -7rem',
+      },
+      dropShadow: {
+        'sharp': '0 1px 2px rgba(0, 0, 0, 0.8)'
       }
     },
   },

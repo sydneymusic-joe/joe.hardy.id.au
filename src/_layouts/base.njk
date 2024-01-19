@@ -7,12 +7,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Joe Hardy</title>
+		<title>Joe.Blog | {% if title %}{{ title }}{% else %}Blog by Joe Hardy | Sydney, Australia{% endif %}</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
-		<meta property="og:title" content="Joe Hardy" />
-		<meta property="og:description" content="Joe Hardy shares writing and photography, mostly related to music, culture, community and tech." />
+		<meta property="og:title" content="{% if title %}{{ ogtitle }}{% else %}Joe Hardy{% endif %}" />
+		<meta property="og:description" content="Joe Hardy (tech guy and co-founder of SydneyMusic.net) shares writing and photography, mostly related to music, culture, community and tech." />
 		<meta property="og:image" content="https://joe.hardy.id.au/assets/images/selfie.jpeg" />
 	</head>
 	<body>
