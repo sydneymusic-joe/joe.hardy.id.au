@@ -5,24 +5,24 @@ pagination:
   data: contentful
   size: 5
 ---
-<header class="bg-header bg-cover {% if pagination.page.previous == null %}h-screen bg-center{% endif %} p-10 relative">
-	<h1 class="italic text-7xl text-white text-center drop-shadow-md">
-		Joe.Blog
+<header class="bg-header bg-cover {% if (pagination.page.previous == null) and (pagination.size == 5) %}h-svh bg-center{% endif %} p-10 relative">
+	<h1 class="italic text-7xl text-center drop-shadow-md">
+		<a href="/" class="underline-offset-8 decoration-4 text-white" style="text-decoration-color: #ffaa00;">Joe.Blog</a>
 	</h1>
 
-	{% if pagination.page.previous == null %}
+	{% if (pagination.page.previous == null) and (pagination.size == 5) %}
 	<h2 class="text-2xl font-light text-center mt-10 text-white" style="filter: drop-shadow(0 2px 1px rgb(0 0 0 / 0.3));"">
 		We are SO back
 	</h2>
 
-	<div class="absolute bottom-0 right-0 text-white p-5">
+	<div class="lg:absolute text-center lg:bottom-0 lg:right-0 text-white p-5">
 		⇣ You can scroll down now
 	</div>
 	{% endif %}
 </header>
 <main>
 	<div class="space-y-2 text-center p-5 text-xs">
-		<p class="text-lg">🧑 Joe Hardy (he/him) 📍 SYD, AUS 👇 writing and photography, mostly about music and culture</p>
+		<p class="text-lg">🧑 <strong class="font-medium">Joe Hardy</strong> (he/him) 📍 Eora/Sydney, Australia<br />👇 writing and photography, mostly about music and culture</p>
 
 		<p>For work, I help teams be amazing. You can <a href="/hire-me">hire me</a>.<br />
 		I'm also the creator and co-founder of <a href="https://sydneymusic.net/">SydneyMusic.net</a></p>
@@ -33,7 +33,7 @@ pagination:
 	<div class="w-full max-w-4xl mx-auto px-5">
 {% for post in pagination.items %}
 <div class="my-10 {% if post.outrageousHeroImage %}gigantor {% endif %}">
-	<h2 class="text-4xl md:text-6xl tracking-tight font-bold md:w-[50%] w-[75%]"><a href="{{ post.slug }}">{{ post.title }}</a></h2>
+	<h2 class="text-4xl md:text-6xl tracking-tight font-bold md:w-[50%] w-[75%]"><a href="{{ post.slug | url }}/">{{ post.title }}</a></h2>
 	<div class="text-xs uppercase">{% blogDateFormatted post.postDate %}</div>
 
 	{% if post.outrageousHeroImage %}
