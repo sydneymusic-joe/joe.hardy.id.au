@@ -84,3 +84,7 @@ figcaption span:last-child { color : #aaa; }
 	margin-left : -3px;
 	@apply mr-2;
 }
+
+main.cv h2 {
+	@apply text-lg font-medium;
+}
