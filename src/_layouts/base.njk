@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
 		<meta name="title" property="og:title" content="{% if title %}{{ title }}{% else %}Joe.Blog | by Joe Hardy{% endif %}" />
 		<meta name="description" property="og:description" content="Joe Hardy (does stuff in tech/media/music and co-founder of SydneyMusic.net) shares writing and photography, mostly related to music, culture, community and tech." />
-		<meta property="og:image" content="https://joe.hardy.id.au/assets/images/selfie.jpeg" />
+		<meta property="og:image" content="{% if ogImage %}{{ogImage}}{% else %}https://joe.hardy.id.au/assets/images/selfie.jpeg{% endif %}" />
 	</head>
 	<body>
 
