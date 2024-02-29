@@ -52,6 +52,11 @@ figcaption span:last-child { color : #aaa; }
 	float : left; content : '⇢';
 	margin-right : 10px;
 }
+.post-content b { @apply font-bold }
+.post-content blockquote {
+	@apply space-y-3 pl-3;
+	border-left : #ccc solid 5px;
+}
 
 .contactbar {
 }
