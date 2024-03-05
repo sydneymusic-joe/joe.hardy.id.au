@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 h1, h2, h3, h4, h5, h6, body {
-	@apply font-sans font-thin;
+	@apply font-sans;
 }
 
 main h1 {
@@ -52,7 +52,7 @@ figcaption span:last-child { color : #aaa; }
 	float : left; content : '⇢';
 	margin-right : 10px;
 }
-.post-content b { @apply font-bold }
+
 .post-content blockquote {
 	@apply space-y-3 pl-3;
 	border-left : #ccc solid 5px;
