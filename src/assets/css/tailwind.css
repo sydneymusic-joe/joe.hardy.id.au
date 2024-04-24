@@ -17,7 +17,7 @@ a {
 
 h2 > a { @apply text-black no-underline }
 
-.gigantor figure, .gigantor figcaption, .gigantor img {
+.gigantor > figure, .gigantor > figure figcaption, .gigantor > figure img {
 	width: 100vw;
 	position: relative;
 	left: 50%;
