@@ -26,12 +26,12 @@ h2 > a { @apply text-black no-underline }
 	margin-right: -50vw;
 }
 
-.gigantor img {
+.gigantor > figure img {
 	max-width : none;
 	z-index: 0
 }
 
-.gigantor figcaption {
+.gigantor > figure figcaption {
 	@apply p-3 text-slate-600 text-xs
 }
 
