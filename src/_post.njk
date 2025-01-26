@@ -9,6 +9,6 @@ layout: home.njk
 
 eleventyComputed:
   title: "{{ page.title}}"
-  ogImage: "{{ page.outrageousHeroImage.fields.file.url }}"
+  ogImage: "{% if page.outrageousHeroImage != null %}{{ page.outrageousHeroImage.fields.file.url}}{% else %}{% if page.featuredImages.length > 0 %}{{ page.featuredImages[0].fields.file.url }}{% endif %}{% endif %}"
 
 ---
