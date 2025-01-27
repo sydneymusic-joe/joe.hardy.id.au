@@ -1,10 +1,32 @@
 require('dotenv').config();
 const {documentToHtmlString} = require('@contentful/rich-text-html-renderer');
+const { BLOCKS } = require('@contentful/rich-text-types');
 const { DateTime } = require("luxon");
+
+const renderAsset = (node, resizeTo) => {
+	const fields = node.data ? node.data.target.fields : node;
+	return `
+	<figure>
+		<img src="${fields.file.url + (resizeTo ? '?' + dim + '=' + (resizeTo*2) : '')}" />
+		<figcaption>
+			<span>${fields.title}</span>
+			<span>${fields.description}</span>
+		</figcaption>
+	</figure>`;
+}
 
 module.exports = function(eleventyConfig){
 	eleventyConfig.addPassthroughCopy("src/assets/images");
-	eleventyConfig.addShortcode('documentToHtmlString', documentToHtmlString);
+	eleventyConfig.addShortcode(
+		'documentToHtmlString',
+		function(input) {
+			return documentToHtmlString(
+				input,
+				{
+					renderNode : {
+						[BLOCKS.EMBEDDED_ASSET]: (node) => { return renderAsset(node); }
+					}
+				}) });
 	eleventyConfig.addShortcode("contentBlock", function(contentBlock) {
 		return `
 		  <section id="${contentBlock.fields.sectionLink}">
@@ -14,15 +36,7 @@ module.exports = function(eleventyConfig){
 			</div>
 		  </section>`;
 	  });
-	eleventyConfig.addShortcode('figureBlock', function(fields, resizeTo) {
-		return `
-	<figure>
-		<img src="${fields.file.url + (resizeTo ? '?' + dim + '=' + (resizeTo*2) : '')}" class="pt-10" />
-		<figcaption>
-			<span>${fields.title}</span>
-			<span>${fields.description}</span>
-		</figcaption>
-	</figure>`; } );
+	eleventyConfig.addShortcode('figureBlock', renderAsset );
 
 	eleventyConfig.addShortcode(
 		"blogDateFormatted",
