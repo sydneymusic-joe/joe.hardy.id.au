@@ -16,6 +16,7 @@ const renderAsset = (node, resizeTo) => {
 }
 
 module.exports = function(eleventyConfig){
+	
 	eleventyConfig.addPassthroughCopy("src/assets/images");
 	eleventyConfig.addShortcode(
 		'documentToHtmlString',
